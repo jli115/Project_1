@@ -3,17 +3,18 @@ var pen = 1; //defalut(initial pen is 1)
 var r = 0,
     g = 0,
     b = 0; //default color:black
+// A HTML range slider
 
 function setup() {
+
   createCanvas(displayWidth, displayHeight);//size of drawing board
   background(247, 246, 234);//color of drawing board
 }
 
-//variableEllipse
+
+
+  //variableEllipse
 function draw() {
-  // Call the variableEllipse() method and send it the
-  // parameters for the current mouse position
-  // and the previous mouse position
   variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
 }
 
@@ -27,6 +28,20 @@ function variableEllipse(x, y, px, py) {
   stroke(speed);
   fill(r,g,b);
   ellipse(x, y, speed, speed);
+}
+
+function draw(){
+  variableFlower(mouseX, mouseY, pmouseX, pmouseY);
+}
+
+function variableFlower(x, y, px, py) {
+  fill(r,g,b);
+  translate(580, 200);
+  noStroke();
+  for (var i = 0; i < 10; i ++) {
+    ellipse(x, y, px, py);
+    rotate(PI/5);
+  }
 }
 
 //function: shape, color, size selectors
@@ -48,10 +63,15 @@ function draw() {
   line(10, 44, 30, 76);
   ellipse(20, 100, 25, 25);
   rect(10, 130, 20, 20);
+  fill(15, 20, 35, 60);
   arc(20, 220, 25, 25, 0, PI + QUARTER_PI, CHORD);
   fill(255);
   stroke(155);
   ellipse(20, 180, 25, 25);
+  fill(15, 20, 35, 60);
+  stroke(155);
+  rect(8, 245, 23, 33, 20);
+  
   
   
   strokeWeight(1);
@@ -149,7 +169,7 @@ function draw() {
       }//pink
     } 
     
-    else {//paint
+      else {//paint
       if (pen == 1) {
         strokeWeight(penwidth);
         stroke(r, g, b);
@@ -171,12 +191,20 @@ function draw() {
       } else if (pen == 5)
         variableEllipse(x, y, px, py);
         else if (pen == 6)
-        drawRaindrop(penwidth,x,y);
+        variableFlower(x,y,penwidth,penwidth);
     }
   }
   //use esc to empty canvas
   if (keyIsPressed)
     if (keyCode == ESCAPE) {
-      background(255);
+      background(247, 246, 234);
     }
-  }
+  
+}
+
+
+
+
+
+
+
