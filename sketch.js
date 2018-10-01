@@ -1,20 +1,34 @@
+"use strict";
+
 var penwidth = 3; //default(initial penwidth is 3)
 var pen = 1; //defalut(initial pen is 1)
 var r = 0,
     g = 0,
     b = 0; //default color:black
 // A HTML range slider
+var img;
+function preload() {
+    var randomImage = floor(random(1,6.99));
+  img = loadImage("Image/back_"+randomImage+".jpg");
+}
 
 function setup() {
-
   createCanvas(displayWidth, displayHeight);//size of drawing board
-  background(247, 246, 234);//color of drawing board
+  //background(247, 246, 234);//color of drawing board
+    background(255,0,0);
+   image(img,0,0,displayWidth, displayHeight);
 }
 
 
 
   //variableEllipse
-function draw() {
+function draw() {}
+//image(img,0,0,width,height);}
+    
+    
+    
+    
+    function draw() {
   variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
 }
 
