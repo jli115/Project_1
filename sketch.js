@@ -200,7 +200,7 @@ function draw() {
         rect(x, y, 3 * penwidth, 3 * penwidth);
       } else if (pen == 4) {
         noStroke();
-        fill(247, 246, 234);
+        fill(255);
         ellipse(x, y, 5 * penwidth, 5 * penwidth);
       } else if (pen == 5)
         variableEllipse(x, y, px, py);
